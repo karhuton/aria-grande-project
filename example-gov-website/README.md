@@ -8,7 +8,7 @@ The website implementes the Aria Grande system with WebMCP.
 ## Test locally with extension
 
 
-Download and install the development version of the [Aria Grande browser extension](browser-extension/README.md)
+Download and install the development version of the [Aria Grande browser extension](/browser-extension/README.md)
 
 Download a copy of this test website from GitHub, and open a local copy of the index.html file in your browser.
 
