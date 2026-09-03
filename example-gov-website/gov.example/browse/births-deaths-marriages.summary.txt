@@ -1,0 +1,8 @@
+This is the Births, deaths, marriages and care page on gov.example.
+
+All available services and related topics are listed on this page.
+
+You can browse births, deaths, marriages and care by selecting a topic.
+
+You can find information by searching or asking with AI.
+

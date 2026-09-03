@@ -1,0 +1,6 @@
+This is the Driving licences information page on gov.example.
+
+Find government guidance, services and information about driving licences.
+
+You can find information by searching or asking with AI.
+

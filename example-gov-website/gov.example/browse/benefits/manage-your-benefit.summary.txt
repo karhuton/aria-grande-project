@@ -1,0 +1,7 @@
+This is the Manage an existing benefit, payment or claim information page on gov.example.
+
+Find out how to use your online account, receive payments, report
+            changes, challenge a decision, and deal with overpayments.
+
+You can find information by searching or asking with AI.
+

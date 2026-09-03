@@ -1,0 +1,8 @@
+This is the Disabled people page on gov.example.
+
+All available services and related topics are listed on this page.
+
+You can browse disabled people by selecting a topic.
+
+You can find information by searching or asking with AI.
+

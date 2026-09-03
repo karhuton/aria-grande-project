@@ -1,0 +1,6 @@
+This is the Buy, sell or scrap a vehicle information page on gov.example.
+
+Find government guidance, services and information about buy, sell or scrap a vehicle.
+
+You can find information by searching or asking with AI.
+

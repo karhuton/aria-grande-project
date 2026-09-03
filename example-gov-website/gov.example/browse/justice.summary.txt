@@ -1,0 +1,8 @@
+This is the Crime, justice and the law page on gov.example.
+
+All available services and related topics are listed on this page.
+
+You can browse crime, justice and the law by selecting a topic.
+
+You can find information by searching or asking with AI.
+
