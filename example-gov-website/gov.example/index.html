@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="The official website for government services and information."
+    >
+    <title>Welcome to GOV.EXAMPLE</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a href="#main">Skip to main content</a>
+
+    <header>
+      <nav aria-label="Primary navigation">
+        <a href="/" aria-label="GOV.EXAMPLE home">GOV.EXAMPLE</a>
+        <a href="#services">Services</a>
+        <a href="#activity">Government activity</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section aria-labelledby="welcome-heading">
+        <h1 id="welcome-heading">
+          Great place to find government services and information
+        </h1>
+
+        <form action="/search" method="get" role="search">
+          <label for="site-search">Search GOV.EXAMPLE</label>
+          <input id="site-search" name="query" type="search">
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="popular-heading">
+        <h2 id="popular-heading">Popular on GOV.EXAMPLE</h2>
+        <ul aria-label="Popular topics"></ul>
+      </section>
+
+      <section id="services" aria-labelledby="services-heading">
+        <h2 id="services-heading">Services and information</h2>
+        <ul aria-label="Services and information"></ul>
+      </section>
+
+      <section id="activity" aria-labelledby="activity-heading">
+        <h2 id="activity-heading">Government activity</h2>
+        <p>Find out what the government is doing.</p>
+        <ul aria-label="Selected government activities"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <nav aria-label="Footer navigation">
+        <h2>GOV.EXAMPLE</h2>
+        <ul aria-label="Support links"></ul>
+      </nav>
+      <p>This is a fictitious government website.</p>
+    </footer>
+  </body>
+</html>
