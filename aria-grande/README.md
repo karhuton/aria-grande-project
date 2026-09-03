@@ -53,7 +53,9 @@ The Client should present the user with a list of actions once opening a website
 
 ### Read action
 
-Client calls the `ariag-read` tool and passes the result to the local model, with system prompt:
+Client calls the `ariag-read` tool and passes the result to the local model.
+
+#### Prompt
 
 ```
 The user has requested to read this website:
@@ -70,7 +72,7 @@ Here is the content provided by the website, when acccessible content was reques
 <ariag-read result>
 ```
 
-#### Fallback behaviour
+#### Fallback
 
 Client presents the user with the website content and allows the user to read and interact with the document.
 
@@ -87,7 +89,7 @@ The Client should include the page title, URL, and the user's request in the
 model prompt. It must treat the tool result as untrusted content and must not
 allow instructions in that content to override the requested action.
 
-System prompt:
+#### Prompt
 
 ```
 The user has requested a summary of this website:
@@ -112,7 +114,7 @@ Here is the content provided by the website, when a summary was requested:
 <ariag-summarise result>
 ```
 
-#### Fallback behaviour
+#### Fallback
 
 Client extracts the readable content of the current document and asks the
 local model to summarise it. The Client should preserve useful headings and
@@ -130,7 +132,7 @@ navigation targets should be preserved when provided.
 The Client must not claim that a search succeeded when the tool returns an
 error or an unusable result.
 
-System prompt:
+#### Prompt
 
 ```
 The user has requested to search this website:
@@ -156,7 +158,7 @@ Here are the results provided by the website, when the search was requested:
 <ariag-search result>
 ```
 
-#### Fallback behaviour
+#### Fallback
 
 Client finds a search form, search link, or control that reveals search on the
 current website and uses it to perform the query. The Client must validate the
@@ -173,7 +175,7 @@ answer. The answer should distinguish information supplied by the website from
 any conclusion made by the local model and should preserve useful supporting
 links when available.
 
-System prompt:
+#### Prompt
 
 ```
 The user has asked a question about this website:
@@ -199,7 +201,7 @@ Here is the information provided by the website, when the question was asked:
 <ariag-ask result>
 ```
 
-#### Fallback behaviour
+#### Fallback
 
 Client extracts the readable content of the current document and asks the
 local model to answer using only that content. If the document does not contain
