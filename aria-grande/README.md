@@ -33,7 +33,7 @@ Clients must implement all actions and their local fallback behaviour, in order 
 | Search | `ariag-search` | Search the current website using the user's query and return matching results. |
 | Ask | `ariag-ask` | Answer or gather context for an open-ended question about the website or current page. |
 | Frontpage | `ariag-frontpage` | Return or navigate to the website's front page. |
-| Explore | `ariag-explore` | Return relevant destinations, sections, or other ways to explore the website. |
+| Explore | `ariag-navigate` | Return relevant destinations, sections, or other ways to explore the website. |
 | Login | `ariag-login` | Perform the website's supported login or register flow. |
 
 
