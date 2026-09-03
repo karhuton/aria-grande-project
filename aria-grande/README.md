@@ -51,7 +51,7 @@ The Client must implement all actions and their local fallback behaviour.
 The Client should present the user with a list of actions once opening a website.
 
 
-### Client: Read action
+### Read action
 
 Client calls the `ariag-read` tool and passes the result to the local model, with system prompt:
 
@@ -75,7 +75,7 @@ Here is the content provided by the website, when acccessible content was reques
 Client presents the user with the website content and allows the user to read and interact with the document.
 
 
-### Client: Summarise action
+### Summarise action
 
 Client calls the `ariag-summarise` tool and passes the result to the local
 model. The model should produce a concise summary of the page's purpose, most
@@ -119,7 +119,7 @@ local model to summarise it. The Client should preserve useful headings and
 page context, omit navigation and repeated boilerplate where possible, and say
 when the page does not provide enough readable content for a useful summary.
 
-### Client: Search action
+### Search action
 
 Client asks the user for a search query and calls the `ariag-search` tool with
 that query, using the text input accepted by the tool's declared input schema.
@@ -164,7 +164,7 @@ selected control and navigation target before using it. If the website has no
 usable search interface, the Client may offer an external search restricted to
 the current website, while allowing the user to cancel.
 
-### Client: Ask action
+### Ask action
 
 Client asks the user for a question and calls the `ariag-ask` tool with that
 question, using the text input accepted by the tool's declared input schema.
@@ -206,7 +206,7 @@ local model to answer using only that content. If the document does not contain
 enough information, the Client must say that the answer is unavailable from
 the current page instead of guessing.
 
-### Client: Frontpage action
+### Frontpage action
 
 Client calls the `ariag-frontpage` tool. The tool may navigate directly or
 return a navigation target. When a target is returned, the Client validates it
@@ -250,7 +250,7 @@ category, article, product, legal, social-media, and external-service links. If
 no suitable link is available, the Client navigates to the root URL of the
 current host.
 
-### Client: Navigate action
+### Navigate action
 
 Client calls the `ariag-navigate` tool and presents the returned destinations,
 sections, or navigation structure as an accessible list or hierarchy. Labels
@@ -291,7 +291,7 @@ structure. Every presented navigation target must come from the current page
 or from a safe same-site root derived by the Client. The user must be able to
 return from the exploration view without losing their place on the page.
 
-### Client: Login action
+### Login action
 
 Client checks whether the user already appears to be logged in, then calls the
 `ariag-login` tool. A successful structured result may provide a login target,
