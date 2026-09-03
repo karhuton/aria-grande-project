@@ -1,0 +1,156 @@
+<!-- Aria Grande page content -->
+<template shadowrootmode="open">
+  <style>
+    :host {
+      all: initial;
+    }
+
+    dialog {
+      box-sizing: border-box;
+      width: min(90vw, 32rem);
+      margin: auto;
+      padding: 2rem;
+      border: 0.2rem solid #000;
+      border-radius: 1rem;
+      background: rgb(0 0 0 / 100%);
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    dialog::backdrop {
+      background: rgb(0 0 0 / 50%);
+    }
+
+    h1 {
+      margin: 0 0 1.5rem;
+      color: #fff;
+      text-align: center;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    button {
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 4.5rem;
+      padding: 1rem 1.5rem;
+      border: 0.15rem solid #fff;
+      border-radius: 0.75rem;
+      background: #fff;
+      color: #000;
+      font: 700 2rem/1.1 Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      touch-action: manipulation;
+      user-select: none;
+
+      &.reverse {
+        background: transparent;
+        color: #fff;
+      }
+
+      &:hover,
+      &:focus-visible {
+        outline: 0.25rem solid #ffd60a;
+        outline-offset: 0.2rem;
+      }
+    }
+
+    #status,
+    #explore-status {
+      min-height: 1.5em;
+      margin: 1.25rem 0 0;
+      color: #fff;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .explore-list,
+    .explore-children {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .explore-list > li,
+    .explore-children > li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .explore-children {
+      margin: 1rem 0 0 1.5rem;
+    }
+
+    .explore-children[hidden] {
+      display: none;
+    }
+
+  </style>
+
+  <dialog aria-labelledby="actions-title" aria-describedby="status">
+    <h1 id="actions-title">Website actions</h1>
+
+    <div class="buttons">
+      <button
+        type="button"
+        data-click-action="Read page"
+        data-long-click-action="Summarise"
+        aria-label="Read or Summarise. Click: Read page. Long-click: Summarise."
+      >Read / Summarise</button>
+      <button
+        type="button"
+        data-click-action="Search"
+        data-long-click-action="Ask"
+        aria-label="Search or Ask. Click: Search. Long-click: Ask."
+      >Search / Ask</button>
+      <button
+        type="button"
+        data-click-action="Frontpage"
+        data-long-click-action="Explore"
+        aria-label="Frontpage or Explore. Click: Frontpage. Long-click: Explore."
+      >Frontpage / Explore</button>
+      <button
+        type="button"
+        data-click-action="Login"
+        data-long-click-action="Register"
+        aria-label="Login or register. Click: Login. Long-click: Register."
+      >Login or register</button>
+      <button
+        class="reverse"
+        type="button"
+        data-cancel
+        aria-label="Cancel. Close the Actions dialog."
+      >Cancel</button>
+    </div>
+
+    <p
+      id="status"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >Choose an action.</p>
+  </dialog>
+
+  <dialog
+    id="explore-dialog"
+    aria-labelledby="explore-title"
+    aria-describedby="explore-status"
+  >
+    <h1 id="explore-title">Website main pages</h1>
+    <div id="explore-buttons" class="buttons"></div>
+    <p
+      id="explore-status"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >Choose a page.</p>
+  </dialog>
+
+</template>

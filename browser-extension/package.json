@@ -1,0 +1,9 @@
+{
+  "name": "aria-grande-browser-extension",
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

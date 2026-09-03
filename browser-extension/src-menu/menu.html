@@ -1,0 +1,91 @@
+<!doctype html>
+<!-- Aria Grande toolbar menu -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aria Grande</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+      }
+
+      body {
+        box-sizing: border-box;
+        width: 20rem;
+        margin: 0;
+        padding: 1rem;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      form {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .setting {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .checkbox-setting {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+      }
+
+      button,
+      input,
+      output,
+      select {
+        font-family: inherit;
+      }
+
+      #status {
+        min-height: 1.2em;
+        margin: 0;
+      }
+    </style>
+    <script src="menu.js" defer></script>
+  </head>
+  <body>
+    <h1>Aria Grande</h1>
+
+    <form id="settings-form">
+      <label class="checkbox-setting">
+        <input id="action-menu-enabled" type="checkbox">
+        Action menu
+      </label>
+
+      <div class="setting">
+        <label for="action-menu-delay">Delay action menu</label>
+        <select id="action-menu-delay">
+          <option value="0">No delay</option>
+          <option value="1">1 sec</option>
+          <option value="2">2 sec</option>
+          <option value="3">3 sec</option>
+          <option value="4">4 sec</option>
+          <option value="5">5 sec</option>
+        </select>
+      </div>
+
+      <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+
+      <div class="buttons">
+        <button type="submit">Save changes</button>
+        <button id="cancel" type="button">Cancel</button>
+      </div>
+    </form>
+  </body>
+</html>

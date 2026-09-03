@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Aria Grande",
+  "version": "1.10.3",
+  "description": "Shows a modal action menu after a configurable page-load delay.",
+  "icons": {
+    "16": "icons/icon-color-16.png",
+    "32": "icons/icon-color-32.png",
+    "48": "icons/icon-color-48.png",
+    "128": "icons/icon-color-128.png"
+  },
+  "action": {
+    "default_title": "Aria Grande",
+    "default_popup": "menu.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
