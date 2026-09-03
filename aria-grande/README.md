@@ -2,27 +2,34 @@
 
 Aria Grande is a [WebMCP](https://github.com/webmachinelearning/webmcp/blob/main/README.md) accessibility system for AI assisted browsing.
 
-Aria Grande defines a communication interface between websites and AI assisted browsers to enable better accessibility browsing exprience.
+Aria Grande defines common browsing activities as a short set of actions, which AI assisted browsers and websites can implement.
 
-## Background: WebMCP
+Clients supporting Aria Grande must implement all the actions, while websites may implement as many as needed.
 
-[WebMCP](https://github.com/webmachinelearning/webmcp/blob/main/README.md) allows websites to provide endpoints called "tools" for AI enabled browsers.
 
-The local or remote AI models running in the web browser may call these tool endpoints as part of the human + AI browsing exprience, as opposed to attempting to interact with the visual, human-oriented website on behalf of the user.
+## Background
 
-Browsers implementing WebMCP, allow websites to register these tool endpoints with any name and description. It is up to each website to communicate to the user and the AI model, how they could use their tools.
+With a normal web browser, the user has to manually browse, read and find information they are looking on a website.
 
-Aria Grande proposes a formal list of WebMCP tools and expected behaviour, any website or client may implement.
+Users with accessibilty needs use assistive technologies, which further complicate and slow down the browsing task.
 
-## Overview
+With an AI assisted web browser, users may request the AI to read and interact with the website on their behalf.
+
+For example, AI assistant may generate a summary of the page. However, the assistant is limited only to the current page content and it has not additional information about the website, it's relation to other pages etc. Futhermore, the visual user interfaces designed for sighted humans are cumbersome for AI agents to interact with.
+
+Aria Grande solves these issues by defining a common set of browsing actions, where the website may help the user's AI assisted browser.
+
+Using Aria Grande, the AI assisted browser may request a pre-generated summary from the website, which is faster, more comprehensive and more insightful than what would be possible locally.
+
+## How it works
 
 Aria Grande defines a list of general browsing behaviours, called "actions".
 
-The actions consists of specific WebMCP tool names, functionality and client fallback behaviour.
+These actions correspond to specific WebMCP tool names, which are called by the client.
 
 Websites may choose which actions to support – all of the endpoints are optional.
 
-Clients must implement all actions and their local fallback behaviour, in order to provide a functional browsing experience on all websites – regardless if they implement support or not.
+Clients must implement all actions and their local fallback behaviour, in order to provide a functional browsing experience on all websites.
 
 ## Actions
 
@@ -37,15 +44,12 @@ Clients must implement all actions and their local fallback behaviour, in order 
 | Login | `ariag-login` | Perform the website's supported login or register flow. |
 
 
-## Website implementation
-
-
-
 ## Client implementation
 
 The Client must implement all actions and their local fallback behaviour.
 
 The Client should present the user with a list of actions once opening a website.
+
 
 ### Client: Read action
 
@@ -209,7 +213,7 @@ return a navigation target. When a target is returned, the Client validates it
 and navigates to it. If the result contains information rather than a target,
 the Client passes it to the local model for an accessible explanation.
 
-System prompt:
+#### Prompt
 
 ```
 The user has requested the front page of this website:
@@ -238,7 +242,7 @@ Here is the result provided by the website, when its front page was requested:
 <ariag-frontpage result>
 ```
 
-#### Fallback behaviour
+#### Fallback
 
 Client identifies the link most likely to be the website's front page,
 preferring a same-site home or root link and excluding account, search,
@@ -246,7 +250,7 @@ category, article, product, legal, social-media, and external-service links. If
 no suitable link is available, the Client navigates to the root URL of the
 current host.
 
-### Client: Explore action
+### Client: Navigate action
 
 Client calls the `ariag-navigate` tool and presents the returned destinations,
 sections, or navigation structure as an accessible list or hierarchy. Labels
@@ -254,7 +258,7 @@ and navigation targets from a structured result should be preserved. The
 Client should prioritise the website's main navigation and major sections over
 minor utility links and duplicate destinations.
 
-System prompt:
+#### Prompt
 
 ```
 The user has requested to navigate this website:
@@ -279,7 +283,7 @@ Here is the structure provided by the website, when exploration was requested:
 <ariag-navigate result>
 ```
 
-#### Fallback behaviour
+#### Fallback
 
 Client examines navigation landmarks, headings, sections, and links in the
 current document and uses the local model to create a simplified website
@@ -300,7 +304,7 @@ tool or local model unless the user has intentionally supplied them for the
 login action. The Client must not claim to have navigated, submitted a form, or
 completed login unless that operation actually occurred.
 
-System prompt:
+#### Prompt
 
 ```
 The user has requested to log in to this website:
@@ -331,7 +335,7 @@ Here is the result provided by the website, when login was requested:
 <ariag-login result>
 ```
 
-#### Fallback behaviour
+#### Fallback
 
 If the user is logged out, Client finds and opens a visible login or sign-in
 control. If the user is already logged in, Client may open a visible account or
@@ -340,72 +344,17 @@ the user's behalf. If no suitable control is found, the Client reports that
 the login page is unavailable.
 
 
-
-### Client action discovery
-
-The client discovers the tools registered by the website:
-
-```js
-const tools = await document.modelContext.getTools();
-
-const readTool = tools.find(t => t.name === "ariag-read");
-const summariseTool = tools.find(t => t.name === "ariag-summarise");
-// etc.
-```
-
-### Client tool execution
-
-TODO
-
-## User action selection
-
-The client MUST provide the user with these actions:
-
-- **Read** action calls `ariag-read`
-- **Summarise** action calls `ariag-summarise`
-- **Search** action calls `ariag-search`
-- **Ask** action calls `ariag-ask`
-- **Frontpage** action calls `ariag-frontpage`
-- **Explore** action calls `ariag-navigate`
-- **Login** action calls `ariag-login`
-
-If an endpoints are not available, the client MUST implement the fallback behaviour.
-
-The client decides how to label, present and trigger the actions.
-
-
-### Client local fallback
-
-The client must implement the requested action locally, if the website does not provide the tool.
-
-Reasons why a tool may not be available:
-
-- `document.modelContext` or `getTools()` is unavailable;
-- the requested `ariag-*` tool is not registered;
-- tool discovery fails;
-- the tool call throws, rejects, times out, or returns an unusable result.
-
-The client may implement the action by systemically prompting a local AI model with the requested action and contents of the current website document.
-
-By parsing the document,   or parts  back to the same action using page DOM data and its local
-model. It may report the tool failure in an accessible status update, but it
-should avoid interrupting the action when the local fallback succeeds.
-
-Tool results are passed to the local AI only after a successful call. On
-failure, error text is diagnostic context and must not be presented as a
-successful action result.
-
 ## Examples
 
 The Aria Grande Project example implementations:
 
-- [Aria Grande web browser extension](browser-extension/README.md)
-– [Gov Website example](example-gov-website/README.md)
+- [Aria Grande web browser extension](/browser-extension/README.md)
+– [Gov Website example](/example-gov-website/README.md)
 
 
 ## Version
 
-Version 1.0, Sep 9th, 2026.
+Version 1.0, Sep 4th, 2026.
 
 ## Changelog
 
