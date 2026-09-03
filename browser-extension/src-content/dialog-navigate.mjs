@@ -8,7 +8,7 @@ import {
   updateStatus
 } from "./dialog.mjs";
 
-let exploreChildListSequence = 0;
+let navigateChildListSequence = 0;
 
 export function showExplorePages(pages, siteName) {
   const title = getExploreTitle();
@@ -19,7 +19,7 @@ export function showExplorePages(pages, siteName) {
   buttons.replaceChildren();
 
   const list = document.createElement("ul");
-  list.className = "explore-list";
+  list.className = "navigate-list";
   for (const page of pages) list.append(createExploreListItem(page));
   buttons.append(list);
 
@@ -50,7 +50,7 @@ function createExploreListItem(page) {
   const childList = document.createElement("ul");
   const childListId = createExploreChildListId();
   childList.id = childListId;
-  childList.className = "explore-children";
+  childList.className = "navigate-children";
   childList.hidden = true;
 
   button.textContent = `${page.label} (${page.children.length})`;
@@ -83,8 +83,8 @@ function toggleExploreChildren(button, childList) {
 }
 
 function createExploreChildListId() {
-  exploreChildListSequence += 1;
-  return `aria-grande-explore-children-${exploreChildListSequence}`;
+  navigateChildListSequence += 1;
+  return `aria-grande-navigate-children-${navigateChildListSequence}`;
 }
 
 function openExplorePage(page) {

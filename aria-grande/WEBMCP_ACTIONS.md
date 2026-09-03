@@ -13,7 +13,7 @@ them from unrelated website tools.
 | Search | `ariag-search` | Search the current website using the user's query and return matching results. |
 | Ask | `ariag-ask` | Answer or gather context for an open-ended question about the website or current page. |
 | Frontpage | `ariag-frontpage` | Return or navigate to the website's front page. |
-| Explore | `ariag-explore` | Return relevant destinations, sections, or other ways to explore the website. |
+| Explore | `ariag-navigate` | Return relevant destinations, sections, or other ways to navigate the website. |
 | Login | `ariag-login` | Perform the website's supported login flow. |
 | Register | `ariag-register` | Perform the website's supported account-registration flow. |
 
@@ -78,7 +78,7 @@ The extension's paired action-menu labels map to WebMCP tools as follows:
 
 - **Read or Summarise:** `ariag-read` or `ariag-summarise`
 - **Search or Ask:** `ariag-search` or `ariag-ask`
-- **Frontpage or Explore:** `ariag-frontpage` or `ariag-explore`
+- **Frontpage or Explore:** `ariag-frontpage` or `ariag-navigate`
 - **Login or register:** `ariag-login` or `ariag-register`, selected from the
   user's requested account action
 

@@ -7,7 +7,7 @@ import {
   isActionsDialogOpen,
   openActionsDialog
 } from "./dialog.mjs";
-import { returnToActions } from "./dialog-explore.mjs";
+import { returnToActions } from "./dialog-navigate.mjs";
 
 const LONG_CLICK_DELAY = 600;
 const longClickTimers = new WeakMap();

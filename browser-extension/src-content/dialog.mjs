@@ -3,10 +3,10 @@ import { getExtensionApi } from "./utils.mjs";
 let actionsDialog;
 let actionButtons;
 let actionStatus;
-let exploreDialog;
-let exploreTitle;
-let exploreButtons;
-let exploreStatus;
+let navigateDialog;
+let navigateTitle;
+let navigateButtons;
+let navigateStatus;
 
 export async function initialiseDialogs() {
   const templateHtml = await loadDialogTemplate();
@@ -16,10 +16,10 @@ export async function initialiseDialogs() {
   actionsDialog = getRequiredElement(shadow, "dialog");
   actionButtons = getRequiredElement(shadow, ".buttons");
   actionStatus = getRequiredElement(shadow, "#status");
-  exploreDialog = getRequiredElement(shadow, "#explore-dialog");
-  exploreTitle = getRequiredElement(shadow, "#explore-title");
-  exploreButtons = getRequiredElement(shadow, "#explore-buttons");
-  exploreStatus = getRequiredElement(shadow, "#explore-status");
+  navigateDialog = getRequiredElement(shadow, "#navigate-dialog");
+  navigateTitle = getRequiredElement(shadow, "#navigate-title");
+  navigateButtons = getRequiredElement(shadow, "#navigate-buttons");
+  navigateStatus = getRequiredElement(shadow, "#navigate-status");
 
   document.documentElement.append(host);
 }
@@ -80,10 +80,10 @@ function getRequiredElement(root, selector) {
 }
 
 export function getActionButtons() { return actionButtons; }
-export function getExploreDialog() { return exploreDialog; }
-export function getExploreTitle() { return exploreTitle; }
-export function getExploreButtons() { return exploreButtons; }
-export function getExploreStatus() { return exploreStatus; }
+export function getExploreDialog() { return navigateDialog; }
+export function getExploreTitle() { return navigateTitle; }
+export function getExploreButtons() { return navigateButtons; }
+export function getExploreStatus() { return navigateStatus; }
 
 export function updateStatus(message) {
   actionStatus.textContent = message;

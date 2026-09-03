@@ -50,7 +50,7 @@ unavailable or fails, the model selects a visible Login or Register control when
 logged out, or an account-page control when logged in, and the extension opens
 it. The local `LanguageModel` can interpret arbitrary WebMCP instructions but is
 text-only; executing instructions beyond opening a locally selected page
-requires explicit extension tools. If `ariag-explore` fails, all
+requires explicit extension tools. If `ariag-navigate` fails, all
 descendant elements within the page's single `body`, including `footer`, are
 passed to the local model with navigation and main sections prioritized. The
 resulting main-pages modal supports a two-level hierarchy with up to 10

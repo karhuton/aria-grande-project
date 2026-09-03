@@ -33,7 +33,7 @@ Clients must implement all actions and their local fallback behaviour, in order 
 | Search | `ariag-search` | Search the current website using the user's query and return matching results. |
 | Ask | `ariag-ask` | Answer or gather context for an open-ended question about the website or current page. |
 | Frontpage | `ariag-frontpage` | Return or navigate to the website's front page. |
-| Explore | `ariag-navigate` | Return relevant destinations, sections, or other ways to explore the website. |
+| Explore | `ariag-navigate` | Return relevant destinations, sections, or other ways to navigate the website. |
 | Login | `ariag-login` | Perform the website's supported login or register flow. |
 
 
@@ -248,7 +248,7 @@ current host.
 
 ### Client: Explore action
 
-Client calls the `ariag-explore` tool and presents the returned destinations,
+Client calls the `ariag-navigate` tool and presents the returned destinations,
 sections, or navigation structure as an accessible list or hierarchy. Labels
 and navigation targets from a structured result should be preserved. The
 Client should prioritise the website's main navigation and major sections over
@@ -257,7 +257,7 @@ minor utility links and duplicate destinations.
 System prompt:
 
 ```
-The user has requested to explore this website:
+The user has requested to navigate this website:
 Title: <title>
 URL: <url>
 
@@ -276,7 +276,7 @@ website sections, remove duplicate destinations, and present it as an
 accessible list or hierarchy with javascript function: <presentation callback>
 
 Here is the structure provided by the website, when exploration was requested:
-<ariag-explore result>
+<ariag-navigate result>
 ```
 
 #### Fallback behaviour
@@ -366,7 +366,7 @@ The client MUST provide the user with these actions:
 - **Search** action calls `ariag-search`
 - **Ask** action calls `ariag-ask`
 - **Frontpage** action calls `ariag-frontpage`
-- **Explore** action calls `ariag-explore`
+- **Explore** action calls `ariag-navigate`
 - **Login** action calls `ariag-login`
 
 If an endpoints are not available, the client MUST implement the fallback behaviour.

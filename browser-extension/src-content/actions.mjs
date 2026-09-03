@@ -1,5 +1,5 @@
 import { prepareAskFallback } from "./actions-ask.mjs";
-import { prepareExploreFallback, runExploreFallback } from "./actions-explore.mjs";
+import { prepareExploreFallback, runExploreFallback } from "./actions-navigate.mjs";
 import { applyFrontpageFallbackDecision, prepareFrontpageFallback } from "./actions-frontpage.mjs";
 import { runLoginAction } from "./actions-login.mjs";
 import { prepareReadFallback } from "./actions-read.mjs";
@@ -33,7 +33,7 @@ export async function runWebMcpAction(action) {
     execution = await executeWebMcpActionWithFallback(action, actionInput);
     const { tool, result, prompt: fallbackPrompt } = execution;
 
-    if (execution.fallbackAction === "explore") {
+    if (execution.fallbackAction === "navigate") {
       session = await getLanguageModelSession();
       await runExploreFallback(session, execution.elements);
       return;

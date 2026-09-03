@@ -1,5 +1,5 @@
 import { updateStatus } from "./dialog.mjs";
-import { showExplorePages } from "./dialog-explore.mjs";
+import { showExplorePages } from "./dialog-navigate.mjs";
 import {
   cleanDomDescription,
   getContentElementAttributes,
@@ -18,14 +18,14 @@ export function prepareExploreFallback() {
   return {
     tool: null,
     result: undefined,
-    fallbackAction: "explore",
+    fallbackAction: "navigate",
     elements
   };
 }
 
 function getExploreElementsWithinBody(container = document.body) {
   if (!container) {
-    throw new Error("This page does not contain body content to explore.");
+    throw new Error("This page does not contain body content to navigate.");
   }
 
   return getContentElementsFromDOM(container)

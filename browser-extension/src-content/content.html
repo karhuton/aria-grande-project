@@ -60,7 +60,7 @@
     }
 
     #status,
-    #explore-status {
+    #navigate-status {
       min-height: 1.5em;
       margin: 1.25rem 0 0;
       color: #fff;
@@ -68,8 +68,8 @@
       text-align: center;
     }
 
-    .explore-list,
-    .explore-children {
+    .navigate-list,
+    .navigate-children {
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -78,17 +78,17 @@
       list-style: none;
     }
 
-    .explore-list > li,
-    .explore-children > li {
+    .navigate-list > li,
+    .navigate-children > li {
       margin: 0;
       padding: 0;
     }
 
-    .explore-children {
+    .navigate-children {
       margin: 1rem 0 0 1.5rem;
     }
 
-    .explore-children[hidden] {
+    .navigate-children[hidden] {
       display: none;
     }
 
@@ -113,9 +113,9 @@
       <button
         type="button"
         data-click-action="Frontpage"
-        data-long-click-action="Explore"
-        aria-label="Frontpage or Explore. Click: Frontpage. Long-click: Explore."
-      >Frontpage / Explore</button>
+        data-long-click-action="Navigate"
+        aria-label="Frontpage or Navigate. Click: Frontpage. Long-click: Navigate."
+      >Frontpage / Navigate</button>
       <button
         type="button"
         data-click-action="Login"
@@ -139,14 +139,14 @@
   </dialog>
 
   <dialog
-    id="explore-dialog"
-    aria-labelledby="explore-title"
-    aria-describedby="explore-status"
+    id="navigate-dialog"
+    aria-labelledby="navigate-title"
+    aria-describedby="navigate-status"
   >
-    <h1 id="explore-title">Website main pages</h1>
-    <div id="explore-buttons" class="buttons"></div>
+    <h1 id="navigate-title">Website main pages</h1>
+    <div id="navigate-buttons" class="buttons"></div>
     <p
-      id="explore-status"
+      id="navigate-status"
       role="status"
       aria-live="polite"
       aria-atomic="true"
