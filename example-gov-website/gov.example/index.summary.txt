@@ -1,0 +1,7 @@
+This is the frontpage of gov.example.
+
+You can browse the website by selecting a topic listed on this page.
+
+Popular topics include: Benefits, Childcare and parenting, Citizenship, Driving and transport, Education and learning.
+
+You can find information by searching or asking with AI.

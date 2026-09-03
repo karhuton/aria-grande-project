@@ -1,0 +1,7 @@
+This is the Benefits page on gov.example.
+
+All available benefits and related topics are listed on this page. Information includes eligibility, appeals, tax credits and Universal Credit.
+
+You can browse benefits by selecting a topic.
+
+You can find information by searching or asking with AI.

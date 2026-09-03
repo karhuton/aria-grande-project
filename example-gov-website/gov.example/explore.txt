@@ -1,0 +1,13 @@
+Main information sections for gov.example:
+
+1. Benefits - contains 7 topics [browse/benefits.html]
+Including:
+- Manage an existing benefit, payment or claim
+– Benefits and financial support if you're looking for work
+- Benefits and financial support if you're temporarily unable to work
+
+2. Child care and parenting – contains 7 topics [browse/childcare-parenting.html]
+Including:
+- Pregnancy and birth
+- Financial help if you have children
+- Childcare
