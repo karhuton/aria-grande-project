@@ -351,7 +351,7 @@ the login page is unavailable.
 The Aria Grande Project example implementations:
 
 - [Aria Grande web browser extension](/browser-extension/README.md)
-– [Gov Website example](/example-gov-website/README.md)
+- [Gov Website example](/example-gov-website/README.md)
 
 
 ## Version
