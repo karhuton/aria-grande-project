@@ -22,7 +22,7 @@ Client fetches the summary with fetch("<page>.txt").
 
 If a summary is not available, the tool returns null.
 
-Example index.txt:
+Example index.summary.txt:
 ```
 This is the frontpage of gov.example.
 
@@ -33,7 +33,7 @@ Popular topics include: Benefits, Childcare and parenting, Citizenship, Driving 
 You can find information by searching or asking with AI.
 ```
 
-Example benefits.txt:
+Example benefits.summary.txt:
 ```
 This is the Benefits page on gov.example.
 
