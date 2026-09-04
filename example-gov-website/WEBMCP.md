@@ -46,44 +46,17 @@ You can find information by searching or asking with AI.
 
 ### Search `ariag-search`
 
-Returns site search results with links as plain text.
-
-Client fetches the results with fetch("/search?q=<query>").
-
-Result template:
-```
-Search results for: <query>
-
-N. <Title>
-<Description>
-<Link>
-```
-
-Example results for "care":
-```
-Search results for "care":
-
-1. Benefits and financial support if you're caring for someone
-Help if you regularly spend time caring for someone. Includes Universal Credit.
-[https://.../browse/benefits.html]
-
-2. Births, deaths, marriages and care
-Parenting, civil partnerships, divorce and Lasting Power of Attorney
-[https://.../browse/births-deaths-marriages.html]
-
-(...)
-```
-
-No results:
-```
-No results found.
-```
+Always opens the site's search-results page at relative `search.html`, passing
+the query as its `q` parameter. For example, searching for `care` opens
+`search.html?q=care`.
 
 ### Ask `ariag-ask`
 
 Returns answers from website AI chatbot. If chatbot is not available, returns null.
 
-Client fetches the results with fetch("/ask?q=<query>").
+Client fetches the answer from relative `ask.html`, passing the query as its
+`q` parameter. The URL is resolved from the site's root, so it works from all
+pages in the hierarchy.
 
 Example result for "how much is the parent leave benefit":
 ```
@@ -93,14 +66,14 @@ You can find a table of income levels and the parental leave benefit calculator 
 [https://.../browse/child-care-parenting/financial-help-children.html]
 ```
 
-### Frontpage `asiag-frontpage`
+### Frontpage `ariag-frontpage`
 
 Returns frontpage link as static response:
 ```
 [https://gob.example]
 ```
 
-### Explore `asiag-navigate`
+### Navigate `ariag-navigate`
 
 Returns a 2-part response: 1) navigation for current page and 2) navigation for frontpage.
 
