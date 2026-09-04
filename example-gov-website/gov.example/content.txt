@@ -1,8 +1,7 @@
 Page: browse/benefits.html
-Title: Benefits — GOV.EXAMPLE
+Title: Benefits
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -32,10 +31,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/benefits/disability.html
-Title: Benefits and financial support if you're disabled or have a health condition — GOV.EXAMPLE
+Title: Benefits and financial support if you're disabled or have a health condition
 Description: Benefits and practical support for disabled people and people with health conditions.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -76,10 +74,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/benefits/families.html
-Title: Benefits and financial support for families — GOV.EXAMPLE
+Title: Benefits and financial support for families
 Description: Financial support for people who have, care for, or plan to adopt children.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -123,10 +120,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/benefits/help-for-carers.html
-Title: Benefits and financial support if you're caring for someone — GOV.EXAMPLE
+Title: Benefits and financial support if you're caring for someone
 Description: Benefits and support for people who regularly care for someone.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -166,10 +162,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/benefits/looking-for-work.html
-Title: Benefits and financial support if you're looking for work — GOV.EXAMPLE
+Title: Benefits and financial support if you're looking for work
 Description: Benefits and financial support available while looking for work.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -224,10 +219,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/benefits/low-income.html
-Title: Benefits and financial support if you're on a low income — GOV.EXAMPLE
+Title: Benefits and financial support if you're on a low income
 Description: Help with housing, heating, health, and other living costs for people on a low income.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -272,10 +266,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/benefits/manage-your-benefit.html
-Title: Manage an existing benefit, payment or claim — GOV.EXAMPLE
+Title: Manage an existing benefit, payment or claim
 Description: How to manage an existing benefit, payment or claim.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -339,10 +332,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/benefits/unable-to-work.html
-Title: Benefits and financial support if you're temporarily unable to work — GOV.EXAMPLE
+Title: Benefits and financial support if you're temporarily unable to work
 Description: Financial help if illness or a health condition temporarily prevents you from working.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -378,10 +370,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/births-deaths-marriages.html
-Title: Births, deaths, marriages and care — GOV.EXAMPLE
+Title: Births, deaths, marriages and care
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -409,10 +400,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/births-deaths-marriages/child-adoption.html
-Title: Having a child, parenting and adoption — GOV.EXAMPLE
+Title: Having a child, parenting and adoption
 Description: Having a child, parenting and adoption guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -439,10 +429,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/births-deaths-marriages/child-benefit.html
-Title: Child Benefit — GOV.EXAMPLE
+Title: Child Benefit
 Description: Child Benefit guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -469,10 +458,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/births-deaths-marriages/death.html
-Title: Death and bereavement — GOV.EXAMPLE
+Title: Death and bereavement
 Description: Death and bereavement guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -499,10 +487,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/births-deaths-marriages/lasting-power-attorney.html
-Title: Lasting power of attorney, being in care and managing finances — GOV.EXAMPLE
+Title: Lasting power of attorney, being in care and managing finances
 Description: Lasting power of attorney, being in care and managing finances guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -529,10 +516,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/births-deaths-marriages/marriage-divorce.html
-Title: Marriage, civil partnership and divorce — GOV.EXAMPLE
+Title: Marriage, civil partnership and divorce
 Description: Marriage, civil partnership and divorce guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -559,10 +545,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/births-deaths-marriages/register-offices.html
-Title: Certificates, register offices, changes of name or gender — GOV.EXAMPLE
+Title: Certificates, register offices, changes of name or gender
 Description: Certificates, register offices, changes of name or gender guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -589,10 +574,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/business.html
-Title: Business and self-employed — GOV.EXAMPLE
+Title: Business and self-employed
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -622,10 +606,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/business/business-innovation-protection-cyber-security.html
-Title: Business innovation, protection and cyber security — GOV.EXAMPLE
+Title: Business innovation, protection and cyber security
 Description: Get research and development funding, protect intellectual property, and meet data protection rules.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -655,10 +638,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/business/business-tax-returns.html
-Title: Business tax and returns — GOV.EXAMPLE
+Title: Business tax and returns
 Description: Understand, file and pay your business taxes.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -688,10 +670,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/business/buying-selling-outside-great-britain.html
-Title: Buying and selling outside of Great Britain — GOV.EXAMPLE
+Title: Buying and selling outside of Great Britain
 Description: Import goods to Great Britain and export goods.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -721,10 +702,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/business/employ-people.html
-Title: Employ people — GOV.EXAMPLE
+Title: Employ people
 Description: Hire staff, pay people, and meet employer duties.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -754,10 +734,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/business/grow-your-business.html
-Title: Grow your business — GOV.EXAMPLE
+Title: Grow your business
 Description: Finance growth, innovate and win work.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -787,10 +766,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/business/keep-your-business-running.html
-Title: Keep your business running — GOV.EXAMPLE
+Title: Keep your business running
 Description: Meet legal duties, file reports and manage risk.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -820,10 +798,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/business/start-your-business.html
-Title: Start your business — GOV.EXAMPLE
+Title: Start your business
 Description: Plan, set up and register a business.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -860,10 +837,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/childcare-parenting.html
-Title: Childcare and parenting — GOV.EXAMPLE
+Title: Childcare and parenting
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -891,10 +867,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/childcare-parenting/childcare.html
-Title: Childcare — GOV.EXAMPLE
+Title: Childcare
 Description: Finding childcare and getting financial support with childcare costs.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -924,10 +899,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/childcare-parenting/divorce-separation-legal.html
-Title: Divorce, separation and legal issues — GOV.EXAMPLE
+Title: Divorce, separation and legal issues
 Description: Child maintenance, parentage and family legal issues.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -957,10 +931,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/childcare-parenting/financial-help-children.html
-Title: Financial help if you have children — GOV.EXAMPLE
+Title: Financial help if you have children
 Description: Financial help for families with children.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -990,10 +963,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/childcare-parenting/fostering-adoption-surrogacy.html
-Title: Fostering, adoption and surrogacy — GOV.EXAMPLE
+Title: Fostering, adoption and surrogacy
 Description: Fostering or adopting a child, including from abroad, and surrogacy.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1023,10 +995,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/childcare-parenting/pregnancy-birth.html
-Title: Pregnancy and birth — GOV.EXAMPLE
+Title: Pregnancy and birth
 Description: Working, time off and financial support when you have a baby, and registering a birth.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1056,10 +1027,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/childcare-parenting/schools-education.html
-Title: Schools and education — GOV.EXAMPLE
+Title: Schools and education
 Description: Sending a child to school, financial support, and dealing with a school.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1089,10 +1059,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/citizenship.html
-Title: Citizenship and living in the UK — GOV.EXAMPLE
+Title: Citizenship and living in the UK
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -1116,10 +1085,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/citizenship/charities-honours.html
-Title: Charities, volunteering and honours — GOV.EXAMPLE
+Title: Charities, volunteering and honours
 Description: Charities, volunteering and honours guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1146,10 +1114,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/citizenship/citizenship.html
-Title: British citizenship — GOV.EXAMPLE
+Title: British citizenship
 Description: British citizenship guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1176,10 +1143,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/citizenship/government.html
-Title: Living in the UK, government and democracy — GOV.EXAMPLE
+Title: Living in the UK, government and democracy
 Description: Living in the UK, government and democracy guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1206,10 +1172,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/citizenship/voting.html
-Title: Voting — GOV.EXAMPLE
+Title: Voting
 Description: Voting guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1236,10 +1201,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/disabilities.html
-Title: Disabled people — GOV.EXAMPLE
+Title: Disabled people
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -1265,10 +1229,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/disabilities/benefits.html
-Title: Benefits and financial help — GOV.EXAMPLE
+Title: Benefits and financial help
 Description: Benefits and financial help guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1295,10 +1258,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/disabilities/carers.html
-Title: Caring for someone — GOV.EXAMPLE
+Title: Caring for someone
 Description: Caring for someone guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1325,10 +1287,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/disabilities/equipment.html
-Title: Disability equipment and transport — GOV.EXAMPLE
+Title: Disability equipment and transport
 Description: Disability equipment and transport guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1355,10 +1316,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/disabilities/rights.html
-Title: Disability rights and the Equality Act 2010 — GOV.EXAMPLE
+Title: Disability rights and the Equality Act 2010
 Description: Disability rights and the Equality Act 2010 guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1385,10 +1345,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/disabilities/work.html
-Title: Work and disabled people — GOV.EXAMPLE
+Title: Work and disabled people
 Description: Work and disabled people guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1415,10 +1374,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/driving.html
-Title: Driving and transport — GOV.EXAMPLE
+Title: Driving and transport
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -1448,10 +1406,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/driving/buy-sell-scrap-vehicle.html
-Title: Buy, sell or scrap a vehicle — GOV.EXAMPLE
+Title: Buy, sell or scrap a vehicle
 Description: Buy, sell or scrap a vehicle guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1478,10 +1435,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/driving/clean-air-zones-emissions-electric-vehicles.html
-Title: Clean air zones, emissions and electric vehicles — GOV.EXAMPLE
+Title: Clean air zones, emissions and electric vehicles
 Description: Clean air zones, emissions and electric vehicles guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1508,10 +1464,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/driving/driving-licences.html
-Title: Driving licences — GOV.EXAMPLE
+Title: Driving licences
 Description: Driving licences guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1538,10 +1493,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/driving/highway-code-road-safety.html
-Title: The Highway Code, road safety and vehicle rules — GOV.EXAMPLE
+Title: The Highway Code, road safety and vehicle rules
 Description: The Highway Code, road safety and vehicle rules guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1568,10 +1522,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/driving/learning-to-drive.html
-Title: Driving tests and learning to drive or ride — GOV.EXAMPLE
+Title: Driving tests and learning to drive or ride
 Description: Driving tests and learning to drive or ride guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1598,10 +1551,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/driving/number-plate.html
-Title: Number plates, vehicle registration and log books — GOV.EXAMPLE
+Title: Number plates, vehicle registration and log books
 Description: Number plates, vehicle registration and log books guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1628,10 +1580,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/driving/vehicle-tax-mot-insurance.html
-Title: Vehicle tax, MOT and insurance — GOV.EXAMPLE
+Title: Vehicle tax, MOT and insurance
 Description: Vehicle tax, MOT and insurance guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1658,10 +1609,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/education.html
-Title: Education and learning — GOV.EXAMPLE
+Title: Education and learning
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -1687,10 +1637,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/education/find-course.html
-Title: Apprenticeships, 14 to 19 education and training for work — GOV.EXAMPLE
+Title: Apprenticeships, 14 to 19 education and training for work
 Description: Apprenticeships, 14 to 19 education and training for work guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1717,10 +1666,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/education/school-admissions-transport.html
-Title: School admissions and transport to school — GOV.EXAMPLE
+Title: School admissions and transport to school
 Description: School admissions and transport to school guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1747,10 +1695,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/education/school-life.html
-Title: Schools and curriculum — GOV.EXAMPLE
+Title: Schools and curriculum
 Description: Schools and curriculum guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1777,10 +1724,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/education/student-finance.html
-Title: Student finance — GOV.EXAMPLE
+Title: Student finance
 Description: Student finance guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1807,10 +1753,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/education/universities-higher-education.html
-Title: Universities and higher education — GOV.EXAMPLE
+Title: Universities and higher education
 Description: Universities and higher education guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1837,10 +1782,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/employing-people.html
-Title: Employing people — GOV.EXAMPLE
+Title: Employing people
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -1870,10 +1814,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/employing-people/contracts.html
-Title: Contracts of employment and working hours — GOV.EXAMPLE
+Title: Contracts of employment and working hours
 Description: Contracts of employment and working hours guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1900,10 +1843,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/employing-people/dismissals-redundancies.html
-Title: Dismissing staff and redundancies — GOV.EXAMPLE
+Title: Dismissing staff and redundancies
 Description: Dismissing staff and redundancies guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1930,10 +1872,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/employing-people/health-safety.html
-Title: Health and safety at work — GOV.EXAMPLE
+Title: Health and safety at work
 Description: Health and safety at work guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1960,10 +1901,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/employing-people/payroll.html
-Title: Payroll — GOV.EXAMPLE
+Title: Payroll
 Description: Payroll guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -1990,10 +1930,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/employing-people/pensions.html
-Title: Pensions for your staff — GOV.EXAMPLE
+Title: Pensions for your staff
 Description: Pensions for your staff guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -2020,10 +1959,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/employing-people/recruiting-hiring.html
-Title: Recruiting and hiring — GOV.EXAMPLE
+Title: Recruiting and hiring
 Description: Recruiting and hiring guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -2050,10 +1988,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/employing-people/time-off.html
-Title: Statutory leave and time off — GOV.EXAMPLE
+Title: Statutory leave and time off
 Description: Statutory leave and time off guidance and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLEServicesGovernment activity
 Search GOV.EXAMPLESearch
 Home
@@ -2080,10 +2017,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: browse/justice.html
-Title: Crime, justice and the law — GOV.EXAMPLE
+Title: Crime, justice and the law
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -2113,10 +2049,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: government/organisations.html
-Title: Departments, agencies and public bodies — GOV.EXAMPLE
+Title: Departments, agencies and public bodies
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -2144,11 +2079,9 @@ Page: index.html
 Title: Welcome to GOV.EXAMPLE
 Description: The official website for government services and information.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
-Government activity
-Great place to find government services and information
+Best place to find government services and information
 Search GOV.EXAMPLE
 Search
 Services and information
@@ -2173,15 +2106,41 @@ Education and learning
 Includes student loans, admissions and apprenticeships
 Employing people
 Includes pay, contracts, hiring and redundancies
+Government activity
+Find out what the government is doing.
+Departments
+Departments, agencies and public bodies
+News
+News stories, speeches, letters and notices
+Guidance and regulation
+Detailed guidance, regulations and rules
+Research and statistics
+Reports, analysis and official statistics
+Policy papers and consultations
+Consultations and strategy
+GOV.EXAMPLE
+This is a fictitious government website.
+</TEXT-CONTENT>
+
+Page: search.html
+Title: Search
+Description: Search government services and information.
+<TEXT-CONTENT>
+GOV.EXAMPLE
+Services
+Government activity
+Search GOV.EXAMPLE
+Search
+Search GOV.EXAMPLE
+Loading search results…
 GOV.EXAMPLE
 This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: search/guidance-and-regulation.html
-Title: Guidance and regulation — GOV.EXAMPLE
+Title: Guidance and regulation
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -2216,10 +2175,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: search/news-and-communications.html
-Title: News and communications — GOV.EXAMPLE
+Title: News and communications
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -2254,10 +2212,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: search/policy-papers-and-consultations.html
-Title: Policy papers and consultations — GOV.EXAMPLE
+Title: Policy papers and consultations
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity
@@ -2292,10 +2249,9 @@ This is a fictitious government website.
 </TEXT-CONTENT>
 
 Page: search/research-and-statistics.html
-Title: Research and statistics — GOV.EXAMPLE
+Title: Research and statistics
 Description: Government information and services in this category.
 <TEXT-CONTENT>
-Skip to main content
 GOV.EXAMPLE
 Services
 Government activity

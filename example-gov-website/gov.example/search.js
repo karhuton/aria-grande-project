@@ -68,7 +68,7 @@
         const link = document.createElement("a");
         const description = document.createElement("p");
         link.href = page.url;
-        link.textContent = page.title;
+        link.textContent = page.title.replace(/\s+—\s+GOV\.EXAMPLE$/i, "");
         description.textContent = page.description;
         title.append(link);
         item.append(title, description);
