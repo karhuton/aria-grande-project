@@ -7,24 +7,29 @@ import {
   serialiseToolResult
 } from "./local-model.mjs";
 import { getErrorMessage, parseJsonObject } from "./utils.mjs";
+import { isActionAbort, throwIfActionAborted } from "./action-operation.mjs";
 
-export async function runAccountAction(action) {
+export async function runAccountAction(action, signal) {
   updateStatus("Checking login status…");
   let session;
 
   try {
     const candidates = getAccountNavigationCandidates();
-    session = await getLanguageModelSession();
+    session = await getLanguageModelSession(signal);
     const checkResponse = await session.prompt(
-      buildAccountCheckPrompt(action, candidates)
+      buildAccountCheckPrompt(action, candidates),
+      { signal }
     );
     const check = parseAccountCheckDecision(checkResponse);
     let execution;
 
     try {
-      execution = await executeWebMcpAction(action);
+      execution = await executeWebMcpAction(action, {}, { signal });
       serialiseToolResult(execution.result);
-    } catch {
+    } catch (error) {
+      if (isActionAbort(error, signal)) {
+        throw error;
+      }
       applyLocalAccountFallback(action, check, candidates);
       return;
     }
@@ -37,11 +42,17 @@ export async function runAccountAction(action) {
         check?.loggedIn === true,
         execution.tool,
         resultText
-      )
+      ),
+      { signal }
     );
+    throwIfActionAborted(signal);
     updateStatus(`${action} ready.`);
     alert(response);
   } catch (error) {
+    if (isActionAbort(error, signal)) {
+      return;
+    }
+    throwIfActionAborted(signal);
     updateStatus(`${action} unavailable.`);
     alert(getErrorMessage(error));
   } finally {
@@ -194,4 +205,3 @@ function addLoginEvidencePart(parts, name, value) {
     parts.push(`${name}: ${cleanValue.slice(0, 160)}`);
   }
 }
-

@@ -1,6 +1,5 @@
 import { runAccountAction } from "./actions-account.mjs";
 
-export function runLoginAction() {
-  return runAccountAction("Login");
+export function runLoginAction(signal) {
+  return runAccountAction("Login", signal);
 }
-

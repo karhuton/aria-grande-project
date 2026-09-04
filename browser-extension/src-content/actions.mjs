@@ -11,14 +11,28 @@ import { updateStatus } from "./dialog.mjs";
 import { buildToolResultPrompt, destroyLanguageModelSession, getLanguageModelSession, serialiseToolResult } from "./local-model.mjs";
 import { navigateToHostFrontpage } from "./navigation.mjs";
 import { getErrorMessage } from "./utils.mjs";
+import {
+  finishActionOperation,
+  isActionAbort,
+  startActionOperation,
+  throwIfActionAborted
+} from "./action-operation.mjs";
 
 export function runAction(action) {
-  if (action === "Login") { void runLoginAction(); return; }
-  if (action === "Register") { void runRegisterAction(); return; }
-  void runWebMcpAction(action);
+  const controller = startActionOperation();
+
+  if (action === "Login") {
+    void runLoginAction(controller.signal).finally(() => finishActionOperation(controller));
+    return;
+  }
+  if (action === "Register") {
+    void runRegisterAction(controller.signal).finally(() => finishActionOperation(controller));
+    return;
+  }
+  void runWebMcpAction(action, controller.signal).finally(() => finishActionOperation(controller));
 }
 
-export async function runWebMcpAction(action) {
+export async function runWebMcpAction(action, signal) {
   const actionInput = getActionInputFromUser(action);
 
   if (actionInput === null) {
@@ -30,12 +44,13 @@ export async function runWebMcpAction(action) {
   let execution;
 
   try {
-    execution = await executeWebMcpActionWithFallback(action, actionInput);
+    execution = await executeWebMcpActionWithFallback(action, actionInput, signal);
+    throwIfActionAborted(signal);
     const { tool, result, prompt: fallbackPrompt } = execution;
 
     if (execution.fallbackAction === "navigate") {
-      session = await getLanguageModelSession();
-      await runExploreFallback(session, execution.elements);
+      session = await getLanguageModelSession(signal);
+      await runExploreFallback(session, execution.elements, signal);
       return;
     }
 
@@ -45,10 +60,12 @@ export async function runWebMcpAction(action) {
 
     const prompt =
       fallbackPrompt ?? buildToolResultPrompt(action, tool, result);
-    session = await getLanguageModelSession();
+    session = await getLanguageModelSession(signal);
+    throwIfActionAborted(signal);
     updateStatus("Preparing response…");
 
-    const response = await session.prompt(prompt);
+    const response = await session.prompt(prompt, { signal });
+    throwIfActionAborted(signal);
 
     if (execution.fallbackAction === "search") {
       await applySearchFallbackDecision(
@@ -67,11 +84,15 @@ export async function runWebMcpAction(action) {
     updateStatus(`${action} complete.`);
     alert(response);
   } catch (error) {
+    if (isActionAbort(error, signal)) {
+      return;
+    }
     if (execution?.fallbackAction === "frontpage") {
       navigateToHostFrontpage();
       return;
     }
 
+    throwIfActionAborted(signal);
     updateStatus(`${action} unavailable.`);
     alert(getErrorMessage(error));
   } finally {
@@ -105,12 +126,16 @@ function getActionInputFromUser(action) {
   return {};
 }
 
-async function executeWebMcpActionWithFallback(action, actionInput = {}) {
+async function executeWebMcpActionWithFallback(action, actionInput = {}, signal) {
   try {
-    const execution = await executeWebMcpAction(action, actionInput);
+    const execution = await executeWebMcpAction(action, actionInput, { signal });
+    throwIfActionAborted(signal);
     serialiseToolResult(execution.result);
     return execution;
   } catch (error) {
+    if (isActionAbort(error, signal)) {
+      throw error;
+    }
     if (action === "Read page") {
       return prepareReadFallback();
     }

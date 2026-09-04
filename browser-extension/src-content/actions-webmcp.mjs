@@ -9,7 +9,13 @@ const WEBMCP_ACTION_TOOLS = {
   Register: "ariag-register"
 };
 
-export async function executeWebMcpAction(action, actionInput = {}) {
+function throwIfAborted(signal) {
+  if (signal?.aborted) {
+    throw signal.reason ?? new DOMException("The action was cancelled.", "AbortError");
+  }
+}
+
+export async function executeWebMcpAction(action, actionInput = {}, options = {}) {
   const toolName = WEBMCP_ACTION_TOOLS[action];
 
   if (!toolName) {
@@ -17,6 +23,9 @@ export async function executeWebMcpAction(action, actionInput = {}) {
   }
 
   const modelContext = document.modelContext;
+  const signal = options.signal;
+
+  throwIfAborted(signal);
 
   if (
     !modelContext ||
@@ -27,6 +36,7 @@ export async function executeWebMcpAction(action, actionInput = {}) {
   }
 
   const tools = await modelContext.getTools();
+  throwIfAborted(signal);
   const tool = tools.find(candidate => candidate.name === toolName);
 
   if (!tool) {
@@ -34,7 +44,8 @@ export async function executeWebMcpAction(action, actionInput = {}) {
   }
 
   const input = getToolInput(tool, action, actionInput);
-  const result = await modelContext.executeTool(tool, input);
+  const result = await modelContext.executeTool(tool, input, { signal });
+  throwIfAborted(signal);
 
   if (result === undefined) {
     throw new Error(`The ${action} action returned no result.`);

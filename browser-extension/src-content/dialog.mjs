@@ -1,4 +1,5 @@
 import templateHtml from "./content.html";
+import { cancelActionOperation } from "./action-operation.mjs";
 
 let actionsDialog;
 let actionButtons;
@@ -22,6 +23,8 @@ export async function initialiseDialogs() {
   navigateTitle = getRequiredElement(shadow, "#navigate-title");
   navigateButtons = getRequiredElement(shadow, "#navigate-buttons");
   navigateStatus = getRequiredElement(shadow, "#navigate-status");
+
+  actionsDialog.addEventListener("close", cancelActionOperation);
 
   document.documentElement.append(host);
 }
@@ -85,6 +88,7 @@ export function updateStatus(message) {
 }
 
 export function closeActionsDialog() {
+  cancelActionOperation();
   actionsDialog.close();
 }
 

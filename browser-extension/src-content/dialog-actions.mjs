@@ -9,6 +9,7 @@ import {
   openActionsDialog
 } from "./dialog.mjs";
 import { returnToActions } from "./dialog-navigate.mjs";
+import { cancelActionOperation } from "./action-operation.mjs";
 
 const LONG_CLICK_DELAY = 600;
 const longClickTimers = new WeakMap();
@@ -26,7 +27,10 @@ export async function initialiseActions() {
 function attachButtonHandlers() {
   for (const button of getActionButtons().querySelectorAll("button")) {
     if (button.hasAttribute("data-cancel")) {
-      button.addEventListener("click", closeActionsDialog);
+      button.addEventListener("click", () => {
+        cancelActionOperation();
+        closeActionsDialog();
+      });
       continue;
     }
     if (button.hasAttribute("data-long-click-action")) {

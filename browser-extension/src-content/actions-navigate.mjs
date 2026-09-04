@@ -6,6 +6,7 @@ import {
   getContentElementsFromDOM
 } from "./dom.mjs";
 import { parseJsonObject } from "./utils.mjs";
+import { throwIfActionAborted } from "./action-operation.mjs";
 
 const EXPLORE_TOP_LEVEL_LIMIT = 10;
 const EXPLORE_CHILD_LIMIT = 10;
@@ -179,7 +180,7 @@ ${JSON.stringify(elements, null, 2)}
   `.trim();
 }
 
-export async function runExploreFallback(session, elements) {
+export async function runExploreFallback(session, elements, signal) {
   const chunks = createExploreChunks(elements);
   const pages = [];
 
@@ -193,8 +194,10 @@ export async function runExploreFallback(session, elements) {
         chunkCandidates,
         index,
         chunks.length
-      )
+      ),
+      { signal }
     );
+    throwIfActionAborted(signal);
     const chunkPages = parseExploreFallbackPages(response, chunkCandidates);
     mergeExplorePages(pages, chunkPages);
   }

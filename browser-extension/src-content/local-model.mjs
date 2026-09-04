@@ -2,6 +2,7 @@ import { updateStatus } from "./dialog.mjs";
 
 const TOOL_RESULT_LIMIT = 12000;
 let languageModelSessionPromise;
+let languageModelSessionSignal;
 
 export function buildToolResultPrompt(action, tool, result) {
   const serialisedResult = serialiseToolResult(result);
@@ -53,17 +54,23 @@ export function serialiseToolResult(result) {
   return serialised.slice(0, TOOL_RESULT_LIMIT);
 }
 
-export function getLanguageModelSession() {
+export function getLanguageModelSession(signal) {
   if (!("LanguageModel" in globalThis)) {
     return Promise.reject(
       new Error("Chrome's LanguageModel API is not available in this browser.")
     );
   }
 
-  if (!languageModelSessionPromise) {
-    languageModelSessionPromise = createLanguageModelSession().catch(
-      handleLanguageModelSessionError
-    );
+  if (!languageModelSessionPromise || languageModelSessionSignal !== signal) {
+    languageModelSessionSignal = signal;
+    const promise = createLanguageModelSession(signal).catch(error => {
+      if (languageModelSessionPromise === promise) {
+        languageModelSessionPromise = undefined;
+        languageModelSessionSignal = undefined;
+      }
+      throw error;
+    });
+    languageModelSessionPromise = promise;
   }
 
   return languageModelSessionPromise;
@@ -76,9 +83,10 @@ export function destroyLanguageModelSession(session) {
 
   session.destroy();
   languageModelSessionPromise = undefined;
+  languageModelSessionSignal = undefined;
 }
 
-async function createLanguageModelSession() {
+async function createLanguageModelSession(signal) {
   const modelOptions = getLanguageModelOptions();
   const availability = await LanguageModel.availability(modelOptions);
 
@@ -88,6 +96,7 @@ async function createLanguageModelSession() {
 
   return LanguageModel.create({
     ...modelOptions,
+    signal,
     monitor: monitorLanguageModelDownload
   });
 }
@@ -112,9 +121,3 @@ function handleDownloadProgress(event) {
 
   updateStatus(message);
 }
-
-function handleLanguageModelSessionError(error) {
-  languageModelSessionPromise = undefined;
-  throw error;
-}
-
