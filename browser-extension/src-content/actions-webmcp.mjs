@@ -60,6 +60,10 @@ export async function executeWebMcpAction(action, actionInput = {}, options = {}
     }
   }
 
+  if (action === "Navigate") {
+    return { tool, result, directResult: true };
+  }
+
   return { tool, result };
 }
 
@@ -98,12 +102,18 @@ export async function executeAriaFallbackAction(action, actionInput = {}, option
     tool: { name: `ariag-${method}` },
     result,
     complete: true,
-    directResult: action === "Summarise" || action === "Ask"
+    directResult:
+      action === "Summarise" || action === "Ask" || action === "Navigate"
   };
 }
 
 function isDirectNavigationAction(action) {
-  return action === "Frontpage" || action === "Search" || action === "Ask";
+  return (
+    action === "Frontpage" ||
+    action === "Search" ||
+    action === "Ask" ||
+    action === "Navigate"
+  );
 }
 
 function getDirectUrl(result) {
@@ -114,6 +124,10 @@ function getDirectUrl(result) {
   const value = result.trim();
   const bracketedUrl = /^\[([^\]]+)\]$/.exec(value)?.[1]?.trim();
   const candidate = bracketedUrl ?? value;
+
+  if (!/^(?:https?|file):\/\//i.test(candidate)) {
+    return null;
+  }
 
   try {
     const url = new URL(candidate, window.location.href);

@@ -1,8 +1,10 @@
 (() => {
   const storageKey = "aria-grande-introduction-shown";
+  window.BLOCK_ARIA_GRANDE = true;
 
   try {
     if (localStorage.getItem(storageKey)) {
+      delete window.BLOCK_ARIA_GRANDE;
       return;
     }
 
@@ -10,8 +12,6 @@
   } catch {
     // If local storage is unavailable, still show the introduction.
   }
-
-  window.BLOCK_ARIA_GRANDE = true;
 
   const dialog = document.createElement("dialog");
   dialog.className = "aria-grande-introduction";

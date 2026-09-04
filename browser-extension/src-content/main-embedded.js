@@ -10,7 +10,7 @@ async function initialiseWhenIntroductionIsClosed() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
   }
 
-  const report = await checkBrowserAiSupport();
+  const report = await checkBrowserAiSupport({ webmcpTimeoutMs: 1000 });
   console.info("Aria Grande browser AI support:", report);
 
   if (!report.supported) {

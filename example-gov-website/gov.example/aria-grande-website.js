@@ -10,13 +10,7 @@
   ariag.search = query => {
     const searchUrl = new URL("search.html", siteRoot);
     searchUrl.searchParams.set("q", query);
-    window.location.assign(searchUrl);
-    return `Opening search results for: ${query}`;
-  };
-  ariag.ask = query => {
-    const askUrl = new URL("ask.html", siteRoot);
-    askUrl.searchParams.set("q", query);
-    return fetchOptionalText(askUrl);
+    return searchUrl.href;
   };
   ariag.frontpage = () => new URL("index.html", siteRoot).href;
   ariag.navigate = getNavigation;
@@ -43,13 +37,6 @@
         description: "Open GOV.EXAMPLE search results for the supplied query.",
         inputSchema: queryInputSchema(),
         execute: ({ query }) => ariag.search(query)
-      },
-      {
-        name: "ariag-ask",
-        description: "Ask the GOV.EXAMPLE assistant a question.",
-        inputSchema: queryInputSchema(),
-        annotations: { readOnlyHint: true },
-        execute: ({ query }) => ariag.ask(query)
       },
       {
         name: "ariag-frontpage",
@@ -102,7 +89,15 @@
     const url = new URL(window.location.href);
     url.search = "";
     url.hash = "";
-    url.pathname = url.pathname.replace(/\.html?$/i, `.${kind}`);
+
+    if (url.pathname.endsWith("/")) {
+      url.pathname += `index.${kind}`;
+    } else if (/\.html?$/i.test(url.pathname)) {
+      url.pathname = url.pathname.replace(/\.html?$/i, `.${kind}`);
+    } else {
+      url.pathname += `.${kind}`;
+    }
+
     return url;
   }
 
@@ -128,6 +123,12 @@
       throw new Error(`Could not fetch ${url.pathname}: ${response.status}`);
     }
 
-    return response.text();
+    const text = await response.text();
+
+    if (/^\s*(?:<!doctype html|<html\b)/i.test(text)) {
+      throw new Error(`Expected ${url.pathname} but received HTML.`);
+    }
+
+    return text;
   }
 })();

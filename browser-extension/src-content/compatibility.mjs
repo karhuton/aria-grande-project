@@ -4,8 +4,8 @@
  *
  * @returns {Promise<{supported: boolean, webmcp: boolean, localModel: boolean}>}
  */
-export async function checkBrowserAiSupport() {
-  const webmcp = await waitForWebMcp();
+export async function checkBrowserAiSupport({ webmcpTimeoutMs = 2000 } = {}) {
+  const webmcp = await waitForWebMcp(webmcpTimeoutMs);
   const ariaFallback = hasAriaFallback();
   const localModel = await checkLocalModel();
 
@@ -17,8 +17,8 @@ function hasAriaFallback() {
   return Boolean(window.ariag && typeof window.ariag.summarise === "function");
 }
 
-async function waitForWebMcp() {
-  for (let attempt = 0; attempt < 20; attempt += 1) {
+async function waitForWebMcp(timeoutMs) {
+  for (let attempt = 0; attempt < Math.ceil(timeoutMs / 100); attempt += 1) {
     if (
       (typeof navigator !== "undefined" && "modelContext" in navigator) ||
       (typeof document !== "undefined" && "modelContext" in document)
