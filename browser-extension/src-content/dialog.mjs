@@ -1,8 +1,9 @@
-import { getExtensionApi } from "./utils.mjs";
+import templateHtml from "./content.html";
 
 let actionsDialog;
 let actionButtons;
 let actionStatus;
+let defaultActionStatus;
 let navigateDialog;
 let navigateTitle;
 let navigateButtons;
@@ -16,6 +17,7 @@ export async function initialiseDialogs() {
   actionsDialog = getRequiredElement(shadow, "dialog");
   actionButtons = getRequiredElement(shadow, ".buttons");
   actionStatus = getRequiredElement(shadow, "#status");
+  defaultActionStatus = actionStatus.textContent;
   navigateDialog = getRequiredElement(shadow, "#navigate-dialog");
   navigateTitle = getRequiredElement(shadow, "#navigate-title");
   navigateButtons = getRequiredElement(shadow, "#navigate-buttons");
@@ -25,14 +27,7 @@ export async function initialiseDialogs() {
 }
 
 async function loadDialogTemplate() {
-  const runtime = getExtensionApi().runtime;
-  const response = await fetch(runtime.getURL("content.html"));
-
-  if (!response.ok) {
-    throw new Error(`Could not load content.html: ${response.status}`);
-  }
-
-  return response.text();
+  return templateHtml;
 }
 
 function createDialogHost(templateHtml) {
@@ -95,6 +90,7 @@ export function closeActionsDialog() {
 
 export function openActionsDialog() {
   if (actionsDialog.open) return;
+  updateStatus(defaultActionStatus);
   actionsDialog.showModal();
   actionButtons.querySelector("button").focus();
 }
@@ -102,4 +98,3 @@ export function openActionsDialog() {
 export function isActionsDialogOpen() {
   return actionsDialog.open;
 }
-

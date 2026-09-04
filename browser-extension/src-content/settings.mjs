@@ -7,10 +7,14 @@ const DEFAULT_ACTION_MENU_SETTINGS = {
 
 export async function scheduleInitialisation(initialise) {
   let settings = DEFAULT_ACTION_MENU_SETTINGS;
-  try {
-    settings = await getExtensionApi().storage.local.get(DEFAULT_ACTION_MENU_SETTINGS);
-  } catch (error) {
-    console.warn("Could not load Aria Grande settings; using defaults.", error);
+  const extensionApi = getExtensionApi();
+
+  if (extensionApi?.storage?.local?.get) {
+    try {
+      settings = await extensionApi.storage.local.get(DEFAULT_ACTION_MENU_SETTINGS);
+    } catch (error) {
+      console.warn("Could not load Aria Grande settings; using defaults.", error);
+    }
   }
   if (!settings.actionMenuEnabled) return;
   const delay = normaliseActionMenuDelay(settings.actionMenuDelaySeconds);
@@ -30,4 +34,3 @@ function normaliseActionMenuDelay(value) {
 function handleInitialisationError(error) {
   console.error("Could not initialise Aria Grande:", error);
 }
-

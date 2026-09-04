@@ -17,7 +17,10 @@ else
   exit 1
 fi
 
-"$esbuild" src-content/main.js --bundle --format=iife --outfile=release/content.js
+esbuild_args="--bundle --format=iife --loader:.html=text"
+
+"$esbuild" src-content/main-extension.js $esbuild_args --outfile=release/bundle-extension.js
+"$esbuild" src-content/main-embedded.js $esbuild_args --outfile=release/bundle-embedded.js
 
 cp src-content/content.html release/
 cp src-menu/menu.js release/

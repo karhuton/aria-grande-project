@@ -133,7 +133,7 @@ async function executeWebMcpActionWithFallback(action, actionInput = {}) {
       return prepareFrontpageFallback();
     }
 
-    if (action === "Explore") {
+    if (action === "Navigate") {
       return prepareExploreFallback();
     }
 

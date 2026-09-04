@@ -4,7 +4,7 @@ const WEBMCP_ACTION_TOOLS = {
   Search: "ariag-search",
   Ask: "ariag-ask",
   Frontpage: "ariag-frontpage",
-  Explore: "ariag-navigate",
+  Navigate: "ariag-navigate",
   Login: "ariag-login",
   Register: "ariag-register"
 };
