@@ -151,12 +151,12 @@ main > article > nav {
 
 main > article > section h2,
 main > article > nav h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
 #category-page h1,
 #information-page h1 {
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
 }
 
 #category-page article ul:empty {
@@ -225,12 +225,12 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-size: clamp(2.25rem, 4vw, 4.5rem);
   letter-spacing: -0.035em;
 }
 
 h2 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   letter-spacing: -0.02em;
 }
 

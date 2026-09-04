@@ -1,0 +1,7 @@
+This is the Departments, agencies and public bodies page on gov.example.
+
+Government departments, agencies and public bodies are listed on this page.
+
+You can browse organisations by selecting a page.
+
+You can find information by searching or asking with AI.

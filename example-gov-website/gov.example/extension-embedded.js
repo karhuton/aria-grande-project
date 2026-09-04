@@ -1,0 +1,1 @@
+../../browser-extension/release/bundle-embedded.js

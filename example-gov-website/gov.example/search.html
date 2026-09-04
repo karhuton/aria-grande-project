@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Search government services and information.">
+    <title>Search — GOV.EXAMPLE</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="search.js" defer></script>
+    <script src="extension-embedded.js" defer></script>
+  </head>
+  <body id="search-page">
+    <a href="#main">Skip to main content</a>
+
+    <header>
+      <nav aria-label="Primary navigation">
+        <a href="index.html" aria-label="GOV.EXAMPLE home">GOV.EXAMPLE</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#activity">Government activity</a>
+      </nav>
+
+      <form action="search.html" method="get" role="search">
+        <label for="site-search">Search GOV.EXAMPLE</label>
+        <input id="site-search" name="q" type="search">
+        <button type="submit">Search</button>
+      </form>
+    </header>
+
+    <main id="main">
+      <article>
+        <header>
+          <h1 id="search-query">Search GOV.EXAMPLE</h1>
+        </header>
+        <p id="search-status" aria-live="polite">Loading search results…</p>
+        <ol id="search-results" aria-label="Search results"></ol>
+      </article>
+    </main>
+
+    <footer>
+      <nav aria-label="Footer navigation">
+        <h2>GOV.EXAMPLE</h2>
+        <ul aria-label="Support links"></ul>
+      </nav>
+      <p>This is a fictitious government website.</p>
+    </footer>
+  </body>
+</html>

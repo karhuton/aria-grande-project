@@ -1,0 +1,7 @@
+This is the News and communications page on gov.example.
+
+Government news, announcements, statements and other communications are listed on this page.
+
+You can browse news and communications by selecting a page.
+
+You can find information by searching or asking with AI.

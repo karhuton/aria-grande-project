@@ -9,6 +9,8 @@
     >
     <title>Welcome to GOV.EXAMPLE</title>
     <link rel="stylesheet" href="style.css">
+    <script src="intro.js" defer></script>
+      <script src="extension-embedded.js" defer></script>
   </head>
   <body>
     <a href="#main">Skip to main content</a>
@@ -27,9 +29,9 @@
           Great place to find government services and information
         </h1>
 
-        <form action="/search" method="get" role="search">
+        <form action="search.html" method="get" role="search">
           <label for="site-search">Search GOV.EXAMPLE</label>
-          <input id="site-search" name="query" type="search">
+          <input id="site-search" name="q" type="search">
           <button type="submit">Search</button>
         </form>
       </section>
