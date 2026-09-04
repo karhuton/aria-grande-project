@@ -18,7 +18,9 @@ function htmlFiles(directory) {
     .flatMap((entry) => {
       const entryPath = path.join(directory, entry.name);
       return entry.isDirectory() && entry.name !== 'templates' ? htmlFiles(entryPath) :
-        entry.isFile() && entry.name.endsWith('.html') ? [entryPath] : [];
+        entry.isFile() && entry.name.endsWith('.html') && entry.name !== 'ask.html'
+          ? [entryPath]
+          : [];
     });
 }
 
