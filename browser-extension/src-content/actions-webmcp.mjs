@@ -51,7 +51,76 @@ export async function executeWebMcpAction(action, actionInput = {}, options = {}
     throw new Error(`The ${action} action returned no result.`);
   }
 
+  if (isDirectNavigationAction(action)) {
+    const url = getDirectUrl(result);
+
+    if (url) {
+      window.location.assign(url);
+      return { complete: true, result };
+    }
+  }
+
   return { tool, result };
+}
+
+export async function executeAriaFallbackAction(action, actionInput = {}, options = {}) {
+  const method = {
+    "Read page": "read",
+    Summarise: "summarise",
+    Search: "search",
+    Ask: "ask",
+    Frontpage: "frontpage",
+    Navigate: "navigate",
+    Login: "login"
+  }[action];
+  const ariaFallback = window.ariag;
+
+  if (!method || !ariaFallback || typeof ariaFallback[method] !== "function") {
+    throw new Error(`This page does not provide the ${action} fallback.`);
+  }
+
+  throwIfAborted(options.signal);
+  const result = await ariaFallback[method](
+    action === "Search" ? actionInput.query : action === "Ask" ? actionInput.question : undefined
+  );
+  throwIfAborted(options.signal);
+
+  if (isDirectNavigationAction(action)) {
+    const url = getDirectUrl(result);
+
+    if (url) {
+      window.location.assign(url);
+      return { complete: true, result };
+    }
+  }
+
+  return {
+    tool: { name: `ariag-${method}` },
+    result,
+    complete: true,
+    directResult: action === "Summarise" || action === "Ask"
+  };
+}
+
+function isDirectNavigationAction(action) {
+  return action === "Frontpage" || action === "Search" || action === "Ask";
+}
+
+function getDirectUrl(result) {
+  if (typeof result !== "string") {
+    return null;
+  }
+
+  const value = result.trim();
+  const bracketedUrl = /^\[([^\]]+)\]$/.exec(value)?.[1]?.trim();
+  const candidate = bracketedUrl ?? value;
+
+  try {
+    const url = new URL(candidate, window.location.href);
+    return url.href;
+  } catch {
+    return null;
+  }
 }
 
 function getToolInput(tool, action, actionInput = {}) {

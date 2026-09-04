@@ -6,7 +6,7 @@ import { prepareReadFallback } from "./actions-read.mjs";
 import { runRegisterAction } from "./actions-register.mjs";
 import { applySearchFallbackDecision, prepareSearchFallback } from "./actions-search.mjs";
 import { prepareSummariseFallback } from "./actions-summarise.mjs";
-import { executeWebMcpAction } from "./actions-webmcp.mjs";
+import { executeAriaFallbackAction, executeWebMcpAction } from "./actions-webmcp.mjs";
 import { updateStatus } from "./dialog.mjs";
 import { buildToolResultPrompt, destroyLanguageModelSession, getLanguageModelSession, serialiseToolResult } from "./local-model.mjs";
 import { navigateToHostFrontpage } from "./navigation.mjs";
@@ -51,6 +51,12 @@ export async function runWebMcpAction(action, signal) {
     if (execution.fallbackAction === "navigate") {
       session = await getLanguageModelSession(signal);
       await runExploreFallback(session, execution.elements, signal);
+      return;
+    }
+
+    if (execution.directResult) {
+      updateStatus(`${action} complete.`);
+      alert(result);
       return;
     }
 
@@ -136,6 +142,17 @@ async function executeWebMcpActionWithFallback(action, actionInput = {}, signal)
     if (isActionAbort(error, signal)) {
       throw error;
     }
+
+    try {
+      const execution = await executeAriaFallbackAction(action, actionInput, { signal });
+      serialiseToolResult(execution.result);
+      return execution;
+    } catch (fallbackError) {
+      if (isActionAbort(fallbackError, signal)) {
+        throw fallbackError;
+      }
+    }
+
     if (action === "Read page") {
       return prepareReadFallback();
     }
